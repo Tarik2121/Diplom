@@ -120,15 +120,14 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    # if current_user.is_authenticated:
-    #     if current_user.username in double_verificator:
-    #         if double_verificator[current_user.username] == "confirmed":
-    #             return render_template("index.html")
-    #         else:
-    #             return redirect(url_for("double_authentification"))
+    if current_user.is_authenticated:
+        if current_user.username in double_verificator:
+            if double_verificator[current_user.username] == "confirmed":
+                return render_template("index.html")
+            else:
+                return redirect(url_for("double_authentification"))
 
-    # return redirect(url_for("login"))
-    return render_template("index.html")
+    return redirect(url_for("login"))
 
 
 @app.route('/register', methods=['GET', 'POST'])
