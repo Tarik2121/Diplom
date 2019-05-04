@@ -230,13 +230,32 @@ def double_authentification():
         else:
             return redirect(url_for('index'))
 
-@app.route('/on')
 def on():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.OUT)
+    GPIO.output(23, True)
     print("ON")
     return "OK"
 
 @app.route('/off')
 def off():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.OUT)
+    GPIO.output(23, False)
+    print("OFF")
+    return "OK"
+def on():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.OUT)
+    GPIO.output(23, True)
+    print("ON")
+    return "OK"
+
+@app.route('/off')
+def off():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.OUT)
+    GPIO.output(23, False)
     print("OFF")
     return "OK"
 
