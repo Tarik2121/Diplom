@@ -244,20 +244,6 @@ def off():
     GPIO.output(23, False)
     print("OFF")
     return "OK"
-def on():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(23, GPIO.OUT)
-    GPIO.output(23, True)
-    print("ON")
-    return "OK"
-
-@app.route('/off')
-def off():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(23, GPIO.OUT)
-    GPIO.output(23, False)
-    print("OFF")
-    return "OK"
 
 @app.route('/test')
 def test():
