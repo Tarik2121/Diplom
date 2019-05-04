@@ -11,10 +11,10 @@ from random import randint
 from smtplib import SMTPException
 from datetime import timedelta
 import datetime
-
 import time
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
+from creds import creds
 
 
 SESSION_TIME = 1 # minutes
@@ -66,8 +66,8 @@ app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = "khorunziytaras@gmail.com" # TODO
-app.config['MAIL_PASSWORD'] = "tarbeat21" # TODO
+app.config['MAIL_USERNAME'] = creds["login"] # TODO
+app.config['MAIL_PASSWORD'] = creds["password"] # TODO
 mail = Mail(app)
 
 
