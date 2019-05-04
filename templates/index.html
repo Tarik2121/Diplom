@@ -41,45 +41,113 @@
       </div>
     </nav>
 
-    <main role="main">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron" style="margin-bottom: 0; border-bottom: 1px solid #aaa;">
-                  {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-        <div class="container">
-          <h1 class="display-3"> Увімкнути світло в кімнаті
-          </h1>
-          <p><a class="btn btn-success btn-lg" href="#" id="export" role="button">ON &raquo;</a></p>
+  
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
         </div>
       </div>
-      <div class="jumbotron whrighty">
-        <div class="container">
-          <h1 class="display-3"> Вимкнути світло в кімнаті
-          </h1>
-          <p><a class="btn btn-danger btn-lg" href="#" id="import" role="button">&laquo; OFF</a></p>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
         </div>
       </div>
-      <p><div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
-       <button type="button" class="btn btn-outline-success">ON</button>
-       <button type="button" class="btn btn-outline-danger">OFF</button>
-      </div></p>
-    </main>
-
-
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло в параші </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" class="btn btn-outline-success">ON</button>
+             <button type="button" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <style>
       .fa-database{
         color: #007bff;
       }
       .fa-file-excel{
         color: #218838;
+      }
+      #main{
+        margin-top: 97px;
+      }
+      .btn-toggler{
+        border: 1px solid #777;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 40px 25px;
+        text-align: center;
       }
     </style>
 
@@ -92,7 +160,7 @@
 
     <script type=text/javascript>
         $(function() {
-          $('a#export').bind('click', function() {
+          $('#on_light').bind('click', function() {
             $.getJSON('/on',
                 function(data) {
               //do nothing
@@ -101,7 +169,7 @@
           });
         });
         $(function() {
-          $('a#import').bind('click', function() {
+          $('#off_light').bind('click', function() {
             $.getJSON('/off',
                 function(data) {
               //do nothing
