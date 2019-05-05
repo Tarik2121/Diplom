@@ -16,6 +16,8 @@ import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 from creds import creds
 
+from RPi import GPIO
+from time import sleep
 
 SESSION_TIME = 1 # minutes
 
@@ -259,7 +261,7 @@ def delete_users():
     return f"deleted {amount} users"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
 
 # вставишь эту хуйню в login.html
 """
