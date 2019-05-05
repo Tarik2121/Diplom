@@ -230,6 +230,7 @@ def double_authentification():
         else:
             return redirect(url_for('index'))
 
+@app.route('/on')
 def on():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.OUT)
