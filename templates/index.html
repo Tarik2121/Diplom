@@ -41,13 +41,23 @@
       </div>
     </nav>
 
-
-  
   <div class="container" id="main">
+  <div class="header-h1">
+    <h1>Керування освітленням та замками</h1>
+  </div>
     <div class="row">
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Світло на кухні </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             <button type="button" id="kitchen_light_on" class="btn btn-outline-success">ON</button>
+             <button type="button" id="kitchen_light_off" class="btn btn-outline-danger">OFF</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Світло у вітальні </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -56,16 +66,7 @@
       </div>
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
-          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
-             <button type="button" class="btn btn-outline-success">ON</button>
-             <button type="button" class="btn btn-outline-danger">OFF</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Світло в гаражі </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -76,7 +77,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Світло в кімнаті #1 </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -85,7 +86,7 @@
       </div>
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Світло в кімнаті #2 </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -94,7 +95,7 @@
       </div>
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Світло у ванній кімнаті </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -105,7 +106,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Ворота у двір </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -114,7 +115,7 @@
       </div>
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Ворота в гараж </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -123,7 +124,7 @@
       </div>
       <div class="col-md-4">
         <div class="btn-toggler">
-          <h4>Світло в параші </h4> 
+          <h4>Вхідні двері </h4> 
           <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
              <button type="button" class="btn btn-outline-success">ON</button>
              <button type="button" class="btn btn-outline-danger">OFF</button>
@@ -132,6 +133,40 @@
       </div>
     </div>
   </div>
+  <div class="header-h1">
+    <h1>Сигналізація</h1>
+  </div>
+  <div class="container" id="main">
+  <div class="row">
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Пожежна сигналізація </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Проникнення в будинок </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-toggler">
+          <h4>Вимкнення живлення </h4> 
+          <div class="btn-group" href="#" id="export" role="group" aria-label="Basic example">
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
     <style>
       .fa-database{
         color: #007bff;
@@ -149,6 +184,32 @@
         padding: 40px 25px;
         text-align: center;
       }
+      .header-h1 {
+        position: relative;
+        margin-bottom: .5rem;
+        text-align: center;
+      }
+      .header-h1 h1 {
+        display: inline-block;
+        background: #fff;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: .5rem 1.5rem;
+        border: .125rem solid #808080;
+        color: #808080;
+      }
+      .header-h1 h1::after {
+        content: "";
+        position: absolute;
+        background: #808080;
+        height: .125rem;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: -999;
+      }
     </style>
 
     <!-- Bootstrap core JavaScript
@@ -160,16 +221,16 @@
 
     <script type=text/javascript>
         $(function() {
-          $('#on_light').bind('click', function() {
+          $('#kitchen_light_on').bind('click', function() {
+           alert('рятуйте');
             $.getJSON('/on',
                 function(data) {
-              //do nothing
             });
             return false;
           });
         });
         $(function() {
-          $('#off_light').bind('click', function() {
+          $('#kitchen_light_off"').bind('click', function() {
             $.getJSON('/off',
                 function(data) {
               //do nothing
