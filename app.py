@@ -215,13 +215,18 @@ def double_authentification():
                 double_verificator[current_user.username] = "confirmed"
                 print(f"\n\n\n\n\n{double_verificator}\n\n\n\n\n")
                 flash("Код вірний!")
+                GPIO.setmode(GPIO.BCM)
+                GPIO.setup(23, GPIO.OUT)
+                GPIO.output(23, True)
+                sleep(3)
+                GPIO.cleanup()
                 return redirect(url_for('index'))
             else:
                 print(f"\n\n\n\n\n{double_verificator}\n\n\n\n\n")
                 flash("Неправильний код")
                 return redirect(url_for('double_authentification'))
         else:
-            flash("Введено хуйню")
+            flash("Неправильне введення")
             return redirect(url_for('test'))
 
     elif request.method == 'GET':
@@ -233,7 +238,7 @@ def double_authentification():
             return redirect(url_for('index'))
 
 @app.route('/on')
-def on():
+def kitchen_light_on():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.OUT)
     GPIO.output(23, True)
@@ -241,7 +246,7 @@ def on():
     return "OK"
 
 @app.route('/off')
-def off():
+def kitchen_loght_off():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.OUT)
     GPIO.output(23, False)
@@ -264,7 +269,7 @@ def delete_users():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
 
-# вставишь эту хуйню в login.html
+# встити в login.html
 """
 <div class="form-group">
     {{ form.recaptcha }}
