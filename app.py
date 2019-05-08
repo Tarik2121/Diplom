@@ -120,6 +120,16 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
+def light_switch(type, sleep=None):
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(23, GPIO.OUT)
+    GPIO.output(23, type)
+    if sleep is not None:
+        sleep(sleep)
+    GPIO.cleanup()
+
+
+
 @app.route('/')
 def index():
     if current_user.is_authenticated:
@@ -215,11 +225,7 @@ def double_authentification():
                 double_verificator[current_user.username] = "confirmed"
                 print(f"\n\n\n\n\n{double_verificator}\n\n\n\n\n")
                 flash("Код вірний!")
-                GPIO.setmode(GPIO.BCM)
-                GPIO.setup(23, GPIO.OUT)
-                GPIO.output(23, True)
-                sleep(3)
-                GPIO.cleanup()
+                light_switch(True, 3)
                 return redirect(url_for('index'))
             else:
                 print(f"\n\n\n\n\n{double_verificator}\n\n\n\n\n")
@@ -239,17 +245,13 @@ def double_authentification():
 
 @app.route('/on')
 def kitchen_light_on():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(23, GPIO.OUT)
-    GPIO.output(23, True)
+    light_switch(True)
     print("ON")
     return "OK"
 
 @app.route('/off')
 def kitchen_loght_off():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(23, GPIO.OUT)
-    GPIO.output(23, False)
+    light_switch(False)
     print("OFF")
     return "OK"
 
@@ -269,7 +271,7 @@ def delete_users():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
 
-# встити в login.html
+# вставити в login.html
 """
 <div class="form-group">
     {{ form.recaptcha }}
